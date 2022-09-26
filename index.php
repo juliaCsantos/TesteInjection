@@ -8,8 +8,6 @@ if(isset($_POST['RM']) || isset($_POST['Senha'])){
     else if(strlen($_POST['Senha']) == 0) {
         echo "<span style='color:white;'>Preencha sua senha</span";
     }else{
-        $RM = $mysqli->real_escape_string($_POST['RM']);
-        $Senha = $mysqli->real_escape_string($_POST['Senha']);
 
         $sql_code = "SELECT * FROM usuarios where RM='$RM' AND Senha='$Senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha no codigo sql: ".$mysqli->error);
